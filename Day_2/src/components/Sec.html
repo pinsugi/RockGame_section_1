@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" class="in" name="" id="" />
+    <p></p>
+
+    <script>
+      const input = document.getElementsByClassName("in");
+      const para = document.querySelector("p");
+
+      function Capitalize(answer) {
+        for (let i = 0; i <= answer; i++) {
+          if (i % 3 == 0 && i % 5 == 0) {
+            return "FizzBuzz";
+          } else if (i % 3 == 0) {
+            return "Fizz";
+          } else if (i % 5 == 0) {
+            return "Buzz";
+          } else {
+            return i;
+          }
+        }
+        return answer;
+      }
+
+      input.addEventListener("change", () => {
+        const num = input.value;
+
+        if (isNaN(num)) {
+          para.textContent = " Please enter number";
+        } else {
+          para.textContent = `${num} ,  ${Capitalize(num)}`;
+        }
+      });
+    </script>
+  </body>
+</html>
